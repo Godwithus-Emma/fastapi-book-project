@@ -67,5 +67,5 @@ async def delete_book(book_id: int) -> None:
 async def get_book(book_id:int) -> Book:
     book = db.get_book(book_id)
     if not book : 
-        raise HTTPException(status_code=404, detail='Book not found, thank you')
+        raise HTTPException(status_code=404, detail='Book not found')
     return JSONResponse(status_code=status.HTTP_200_OK, content=book.model_dump())
